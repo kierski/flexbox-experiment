@@ -1,0 +1,50 @@
+@import "normalize";
+@import "variables";
+
+$count: 5;
+@for $i from 0 to $count {
+    #section#{$i + 1} {
+        background: mix($primary-color-light, $accent-color, percentage($i / ($count - 1)));
+    }
+}
+
+body {
+  font-family: 'Cantarell', sans-serif;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  ul {
+    display: flex;
+    li {
+      list-style: none;
+      flex: 1;
+      padding: 20px;
+      a {
+        color: #3F51B5;
+        text-decoration: none;
+        &:hover {
+          color: #303F9F;
+        }
+      }
+    }
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  .section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 100vh;
+    h1 {
+      font-size: 3em;
+      text-transform: uppercase;
+    }
+  }
+}
